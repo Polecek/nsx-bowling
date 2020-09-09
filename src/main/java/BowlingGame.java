@@ -1,12 +1,17 @@
 public class BowlingGame {
 
-    private int score;
+    private int[] ballsThrown = new int[9*2 + 3];
+    private int currentBall;
 
     public int getScore() {
+        int score = 0;
+        for (int pinsKnockedDown : ballsThrown) {
+            score += pinsKnockedDown;
+        }
         return score;
     }
 
     public void registerBallThrown(int pinsKnockedDown) {
-        score += pinsKnockedDown;
+        ballsThrown[currentBall++] = pinsKnockedDown;
     }
 }
