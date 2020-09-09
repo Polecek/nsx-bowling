@@ -25,6 +25,20 @@ class BowlingGameTest {
         assertScore(2);
     }
 
+    @Test
+    void completeFrameAndOneMoreThrow() {
+        throwBalls(3, 4, 9);
+
+        assertScore(16);
+    }
+
+    @Test
+    void finishedGameWithNoMark() {
+        throwBalls(4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5);
+
+        assertScore(90);
+    }
+
     private void assertScore(int expectedScore) {
         assertEquals(expectedScore, game.getScore());
     }
