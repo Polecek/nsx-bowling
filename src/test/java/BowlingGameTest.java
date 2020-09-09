@@ -46,6 +46,13 @@ class BowlingGameTest {
         assertScore(10);
     }
 
+    @Test
+    void finishedSpare() {
+        throwBalls(5, 5, 1);
+
+        assertScore(12);
+    }
+
     private void assertScore(int expectedScore) {
         assertEquals(expectedScore, game.getScore());
     }
