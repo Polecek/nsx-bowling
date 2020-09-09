@@ -8,4 +8,11 @@ class BowlingGameTest {
     void emptyGame() {
         assertEquals(0, new BowlingGame().getScore());
     }
+
+    @Test
+    void firstThrow() {
+        BowlingGame game = new BowlingGame();
+        game.registerBallThrown(1);
+        assertEquals(1, game.getScore());
+    }
 }
