@@ -5,7 +5,8 @@ public class BowlingGame {
 
     public int getScore() {
         int score = 0;
-        for (int pinsKnockedDown : ballsThrown) {
+        for (int i = 0; i < currentBall; i++) {
+            int pinsKnockedDown = ballsThrown[i];
             score += pinsKnockedDown;
         }
         return score;
