@@ -5,7 +5,7 @@ public class BowlingGame {
 
     public int getScore() {
         int score = 0;
-        for (int i = 0; i < currentBall; i += 2) {
+        for (int i = 0, frame = 0; frame < 10 && i < currentBall; frame++, i += 2) {
             int twoBallsInFrame = ballsThrown[i] + ballsThrown[i + 1];
             if (twoBallsInFrame == 10) {
                 score += 10 + ballsThrown[i + 2];
