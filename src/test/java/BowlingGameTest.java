@@ -13,14 +13,21 @@ class BowlingGameTest {
 
     @Test
     void firstThrow() {
-        game.registerBallThrown(1);
+        throwBalls(1);
+
         assertEquals(1, game.getScore());
     }
 
     @Test
     void secondThrow() {
-        game.registerBallThrown(1);
-        game.registerBallThrown(1);
+        throwBalls(1, 1);
+
         assertEquals(2, game.getScore());
+    }
+
+    private void throwBalls(int... balls) {
+        for (int pinsKnockedDown : balls) {
+            game.registerBallThrown(pinsKnockedDown);
+        }
     }
 }
