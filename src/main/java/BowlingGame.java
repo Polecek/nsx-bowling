@@ -5,11 +5,12 @@ public class BowlingGame {
 
     public int getScore() {
         int score = 0;
-        for (int i = 0; i < currentBall; i++) {
-            int pinsKnockedDown = ballsThrown[i];
-            score += pinsKnockedDown;
-            if (score == 10) {
-                score += ballsThrown[i + 1];
+        for (int i = 0; i < currentBall; i += 2) {
+            int twoBallsInFrame = ballsThrown[i] + ballsThrown[i + 1];
+            if (twoBallsInFrame == 10) {
+                score += 10 + ballsThrown[i + 2];
+            } else {
+                score += twoBallsInFrame;
             }
         }
         return score;
