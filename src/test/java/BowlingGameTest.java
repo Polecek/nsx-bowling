@@ -8,21 +8,25 @@ class BowlingGameTest {
 
     @Test
     void emptyGame() {
-        assertEquals(0, game.getScore());
+        assertScore(0);
     }
 
     @Test
     void firstThrow() {
         throwBalls(1);
 
-        assertEquals(1, game.getScore());
+        assertScore(1);
     }
 
     @Test
     void secondThrow() {
         throwBalls(1, 1);
 
-        assertEquals(2, game.getScore());
+        assertScore(2);
+    }
+
+    private void assertScore(int expectedScore) {
+        assertEquals(expectedScore, game.getScore());
     }
 
     private void throwBalls(int... balls) {
