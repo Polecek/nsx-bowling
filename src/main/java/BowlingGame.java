@@ -7,6 +7,6 @@ public class BowlingGame {
     }
 
     public void registerBallThrown(int pinsKnockedDown) {
-        score = pinsKnockedDown;
+        score += pinsKnockedDown;
     }
 }
